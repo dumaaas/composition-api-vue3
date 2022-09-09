@@ -1,17 +1,15 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <h1>Composition API | Vue 3</h1>
+  <QuestionComponent />
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
+<script setup>
+import { provide, ref } from 'vue'
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+import QuestionComponent from "./components/QuestionComponent.vue";
+const weekend = ref('Happy weekend');
+provide('weekend', weekend);
+
 </script>
 
 <style>
@@ -22,5 +20,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+h1 {
+    margin-bottom: 60px;
 }
 </style>
